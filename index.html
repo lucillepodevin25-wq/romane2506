@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#faf7ef">
+    <meta name="description" content="Une lettre, une fleur et quelques petits secrets pour célébrer notre premier mois ensemble.">
+    <title>Un mois de nous — Juste pour toi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><symbol id="heart" viewBox="0 0 64 60"><path d="M32 55C26 49 3 34 3 18 3 1 24-2 32 13 40-2 61 1 61 18 61 34 38 49 32 55Z"/></symbol><symbol id="sparkle" viewBox="0 0 40 40"><path d="M20 2C20 15 25 20 38 20 25 20 20 25 20 38 20 25 15 20 2 20 15 20 20 15 20 2Z"/></symbol></defs></svg>
+    <header class="site-header">
+      <a href="#lettre" class="brand" aria-label="Un mois de nous, retour à la lettre"><svg viewBox="0 0 64 60"><use href="#heart"/></svg><span>un mois de nous<span class="brand-dot">.</span></span></a>
+      <span class="header-note">Une petite parenthèse, juste pour toi</span>
+      <button class="sound-button" id="sound-toggle" aria-expanded="false" aria-controls="music-panel" aria-label="Ouvrir le lecteur No. 1 Party Anthem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/></svg><span>No. 1 Party Anthem</span><span class="sound-status">♫</span></button>
+    </header>
+    <aside class="music-panel" id="music-panel" aria-label="Notre musique" hidden><button class="music-close" id="music-close" aria-label="Fermer le lecteur">×</button><p class="music-caption">Notre petite bande-son</p><div id="music-player"></div><p class="music-note">Lecture via Spotify, selon sa disponibilité. Pour écouter uniquement le refrain, un fichier audio dédié reste nécessaire.</p></aside>
+
+    <main>
+      <div class="anniversary"><svg viewBox="0 0 64 60"><use href="#heart"/></svg> NOTRE PREMIER MOIS <svg viewBox="0 0 64 60"><use href="#heart"/></svg></div>
+      <section class="page active" id="secret" aria-labelledby="secret-title">
+        <div class="page-heading"><h1 id="secret-title" tabindex="-1">Notre petit secret,<br><em>juste entre nous.</em></h1><p>Un code à trois chiffres pour ouvrir notre histoire.</p></div>
+        <form class="secret-form" id="secret-form">
+          <div class="secret-padlock" id="secret-padlock" aria-hidden="true"><span class="lock-shackle"></span><span class="lock-body"><svg viewBox="0 0 64 60"><use href="#heart"/></svg></span></div>
+          <label for="secret-code">Le code de notre histoire</label>
+          <input id="secret-code" name="code" type="password" inputmode="numeric" pattern="[0-9]{3}" minlength="3" maxlength="3" autocomplete="off" placeholder="•••" required aria-describedby="secret-hint secret-feedback">
+          <p class="secret-hint" id="secret-hint">indice on s'est mises ensemble à cette date .</p>
+          <p class="secret-feedback" id="secret-feedback" role="status" aria-live="polite"></p>
+          <button class="next-button" id="unlock-button" type="submit">Ouvrir notre histoire <span aria-hidden="true">↗</span></button>
+          <span class="action-note">Une date, et le début de tout.</span>
+        </form>
+      </section>
+
+      <section class="page" id="lettre" aria-labelledby="letter-title" hidden>
+        <div class="page-heading"><span class="chapter">01 / LA LETTRE</span><h1 id="letter-title" tabindex="-1">Un petit quelque chose<br><em>pour toi…</em></h1><p>Déjà un mois à tes côtés. Et tellement de raisons de sourire.</p></div>
+        <div class="scene envelope-scene">
+          <div class="doodle flower-doodle" aria-hidden="true"><svg viewBox="0 0 110 150" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M57 137C43 100 61 69 55 39M54 96C24 96 18 74 21 68 45 66 53 84 54 96M53 112C78 105 87 88 85 83 67 85 54 99 53 112"/><path d="M53 41C27 49 28 29 42 28 18 19 34 4 46 21 40-2 61-3 59 20 74 0 89 17 68 29 92 26 88 47 66 39 75 58 52 65 53 41Z"/><circle cx="56" cy="30" r="8"/></svg><span>le début d'une<br>belle histoire</span></div>
+          <div class="envelope-wrap" id="envelope-wrap">
+            <article class="love-letter" id="love-letter" aria-hidden="true"><span class="letter-date">Un mois de nous, et ce n’est que le début.</span><h2>Mon amour,</h2><p>1 mois, et je commence déjà à rêvasser à propos de toi.</p><p>À m’extasier devant ta beauté. Ton sourire, ta voix. Comment ne pas tomber amoureuse de ça ? Mes lèvres n’attendent que les tiennes.</p><p>Au firmament de la nuit, ou quand je m’ennuie. Tu es ma muse, ma mélodie.</p><p>Et rien que pour toi, je m’investis, dans notre relation qui, je l’espère, ne sera jamais finie.</p><span class="letter-signature">Je t’aime mon amour, celle que je choisirai toujours <svg viewBox="0 0 64 60"><use href="#heart"/></svg></span></article>
+            <button class="envelope" id="open-envelope" aria-label="Ouvrir l’enveloppe et lire la lettre d’amour" aria-expanded="false" aria-controls="love-letter"><span class="envelope-back"></span><span class="envelope-flap"></span><span class="envelope-front"></span><span class="postage"><svg viewBox="0 0 64 60"><use href="#heart"/></svg><small>POUR TOI</small></span><span class="envelope-address">À toi, mon amour</span><span class="wax-seal"><svg viewBox="0 0 64 60"><use href="#heart"/></svg></span></button>
+          </div>
+          <div class="doodle envelope-note" aria-hidden="true"><svg class="little-sparkle" viewBox="0 0 40 40"><use href="#sparkle"/></svg><span>psst…<br>c'est pour toi !</span><svg class="note-arrow" viewBox="0 0 100 70" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M90 5C103 45 51 60 10 37M10 37l17-2M10 37l8 16"/></svg></div>
+        </div>
+        <div class="page-actions"><p class="interaction-hint" id="envelope-hint"><span class="tiny-heart">♡</span> Clique sur l’enveloppe pour découvrir ma lettre</p><button class="next-button" data-next="fleur" id="letter-next" disabled>La suite de notre histoire <span>↗</span></button><span class="action-note">Prends ton temps, tout est pour toi.</span></div>
+      </section>
+
+      <section class="page" id="fleur" aria-labelledby="flower-title" hidden>
+        <div class="page-heading"><span class="chapter">02 / UN PEU, BEAUCOUP…</span><h1 id="flower-title" tabindex="-1">Une fleur, mille raisons<br><em>de t’aimer.</em></h1><p>Chaque pétale cache un petit bout de mon cœur.</p></div>
+        <div class="scene flower-scene"><div class="interactive-flower" id="interactive-flower"><svg class="flower-stem" viewBox="0 0 240 330" aria-hidden="true"><path d="M120 130Q107 227 127 320" fill="none" stroke="#849477" stroke-width="5"/><path d="M116 246Q55 247 52 204Q103 204 116 246M119 274Q184 270 187 228Q135 232 119 274" fill="#a7b59a"/></svg><div class="petals" id="petals"></div><div class="flower-center" aria-hidden="true"><svg viewBox="0 0 64 60"><use href="#heart"/></svg></div></div><span class="flower-side-note" aria-hidden="true">un peu, beaucoup,<br>passionnément…</span></div>
+        <div class="flower-messages" id="flower-messages" aria-live="polite"><p>Un pétale, une pensée pour toi.</p></div>
+        <div class="page-actions"><p class="interaction-hint" id="petal-counter">6 petits secrets à découvrir</p><button class="next-button" id="flower-next" data-next="coeur" disabled>Encore une petite surprise <span>↗</span></button><span class="action-note">Effeuille-la du bout des doigts.</span></div>
+      </section>
+
+      <section class="page" id="coeur" aria-labelledby="heart-title" hidden>
+        <div class="page-heading"><span class="chapter">03 / LE PETIT SECRET</span><h1 id="heart-title" tabindex="-1">Quelque part ici,<br><em>mon cœur t’attend.</em></h1><p>Soulève les petits papiers. Une surprise se cache sous l’un d’eux.</p></div>
+        <div class="scene heart-scene"><div class="heart-papers" id="heart-papers"></div></div>
+        <div class="found-message" id="found-message" aria-live="polite"><p>À toi de jouer, mon amour…</p></div>
+        <div class="page-actions"><button class="next-button" id="heart-next" data-next="mots" disabled>Quelques mots entre nous… <span>↗</span></button><span class="action-note">Les plus belles choses se trouvent à deux.</span></div>
+      </section>
+
+      <section class="page" id="mots" aria-labelledby="crossword-title" hidden>
+        <div class="page-heading"><span class="chapter">04 / LES MOTS DE NOUS</span><h1 id="crossword-title" tabindex="-1">Six petits mots,<br><em>toute notre histoire.</em></h1><p>Ouvre le carnet, tourne les pages et remplis nos mots croisés.</p></div>
+        <div class="crossword-scene">
+          <div class="crossword-paper"><span class="crossword-caption">Les mots qui nous ressemblent</span><div class="crossword-grid" id="crossword-grid" role="group" aria-label="Grille de mots croisés, six mots" aria-describedby="crossword-help"></div><p id="crossword-help">Une lettre par case. Les lettres se partagent aux croisements.</p></div>
+          <div class="clue-notebook" id="clue-notebook">
+            <button class="notebook-cover" id="open-notebook" aria-expanded="false" aria-controls="notebook-pages"><span>Nos petits<br>secrets</span><svg viewBox="0 0 64 60" aria-hidden="true"><use href="#heart"/></svg><small>Ouvre-moi pour un indice</small></button>
+            <div class="notebook-pages" id="notebook-pages" hidden><button class="notebook-close" id="close-notebook" aria-label="Fermer le carnet">×</button><span class="notebook-label">Un indice, juste pour toi</span><div class="clue-page" id="clue-page" aria-live="polite"><span id="clue-number"></span><p id="clue-text"></p><small id="clue-direction"></small><span class="clue-solved" id="clue-solved"></span></div><button class="write-word" id="write-word">Écrire ce mot ↗</button><div class="notebook-controls"><button id="previous-clue" aria-label="Tourner à la page précédente">←</button><span id="clue-pagination"></span><button id="next-clue" aria-label="Tourner à la page suivante">→</button></div></div>
+          </div>
+        </div>
+        <div class="page-actions"><p class="interaction-hint" id="crossword-feedback" role="status">0 / 6 mots trouvés. Notre histoire se dessine…</p><button class="replay-button" id="check-crossword">Vérifier nos mots</button><button class="next-button" id="crossword-next" data-next="amour" disabled>Et pour finir… <span aria-hidden="true">↗</span></button><span class="action-note">Chaque réponse est un petit bout de nous.</span></div>
+      </section>
+
+      <section class="page" id="amour" aria-labelledby="love-title" hidden>
+        <div class="page-heading"><span class="chapter">05 / ET CE N’EST QUE LE DÉBUT</span><h1 id="love-title" tabindex="-1">Un mois de nous.<br><em>Et tant d’autres à venir.</em></h1><p>Si je devais garder seulement trois mots…</p></div>
+        <figure class="axolotl-hug"><svg viewBox="0 0 360 290" role="img" aria-labelledby="axolotl-title"><title id="axolotl-title">Un axolotl en peluche fait un câlin à un oreiller en forme de cœur, brodé L + R.</title><defs><pattern id="plush-texture" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M1 2l1 1m3 2l1 1" stroke="#fff8f4" stroke-width="1" opacity=".5"/></pattern></defs><ellipse cx="180" cy="268" rx="125" ry="12" fill="#d8cfbd" opacity=".35"/><path d="M254 231q51-9 39-58-12 35-48 24" fill="#efccc8" stroke="#c49396" stroke-width="3"/><ellipse cx="180" cy="205" rx="77" ry="64" fill="#f2d5cf" stroke="#c49396" stroke-width="3"/><ellipse cx="119" cy="253" rx="28" ry="16" fill="#f2d5cf" stroke="#c49396" stroke-width="3"/><ellipse cx="241" cy="253" rx="28" ry="16" fill="#f2d5cf" stroke="#c49396" stroke-width="3"/><g fill="#dda3ab" stroke="#c49396" stroke-width="3" stroke-linejoin="round"><path d="M109 105Q57 89 48 58q36-1 63 32M102 123Q48 127 34 106q33-17 70-1M108 142Q65 165 43 151q16-29 60-27"/><path d="M251 105q52-16 61-47-36-1-63 32M258 123q54 4 68-17-33-17-70-1M252 142q43 23 65 9-16-29-60-27"/></g><path d="M96 113c0-49 38-75 84-75s84 26 84 75c0 47-34 68-84 68s-84-21-84-68Z" fill="#f6ded5" stroke="#c49396" stroke-width="3"/><path d="M96 113c0-49 38-75 84-75s84 26 84 75c0 47-34 68-84 68s-84-21-84-68Z" fill="url(#plush-texture)"/><ellipse cx="131" cy="130" rx="15" ry="9" fill="#e4a4a6" opacity=".65"/><ellipse cx="230" cy="130" rx="15" ry="9" fill="#e4a4a6" opacity=".65"/><g fill="#65534f"><circle cx="140" cy="113" r="7"/><circle cx="220" cy="113" r="7"/></g><g fill="#fff8f1"><circle cx="142" cy="111" r="2"/><circle cx="222" cy="111" r="2"/></g><path d="M168 132q12 12 24 0" fill="none" stroke="#8d6965" stroke-width="3" stroke-linecap="round"/><path d="M180 254c-12-10-67-42-67-72 0-36 48-42 67-11 19-31 67-25 67 11 0 30-55 62-67 72Z" fill="#bc7f86" stroke="#99646d" stroke-width="3"/><path d="M180 245c-16-13-58-40-58-64 0-27 39-31 58 2 19-33 58-29 58-2 0 24-42 51-58 64Z" fill="none" stroke="#eec4c5" stroke-width="2" stroke-dasharray="3 4"/><text x="180" y="213" text-anchor="middle" font-family="Caveat, cursive" font-size="34" fill="#fff3e5" stroke="#fff3e5" stroke-width=".5" stroke-dasharray="2 1">L + R</text><path d="M108 180q-11 30 28 39 14 2 18-10 3-12-14-16l-13-5M252 180q11 30-28 39-14 2-18-10-3-12 14-16l13-5" fill="#f2d5cf" stroke="#c49396" stroke-width="3" stroke-linecap="round"/><path d="M174 65v10m6-12v9m6-7v10" stroke="#dbb7b0" stroke-width="2" stroke-linecap="round"/></svg><figcaption>Un câlin, en attendant les tiens.</figcaption></figure>
+        <div class="scene final-scene"><div class="love-orbit" aria-hidden="true"><svg class="orbit-heart orbit-one" viewBox="0 0 64 60"><use href="#heart"/></svg><svg class="orbit-heart orbit-two" viewBox="0 0 64 60"><use href="#heart"/></svg><svg class="orbit-heart orbit-three" viewBox="0 0 64 60"><use href="#heart"/></svg><svg class="orbit-sparkle" viewBox="0 0 40 40"><use href="#sparkle"/></svg></div><div class="love-words">Je t’aime<span>un peu plus chaque jour.</span></div><button class="love-button" id="love-button" aria-label="Envoyer une pluie de cœurs"><svg viewBox="0 0 64 60"><use href="#heart"/></svg></button></div>
+        <div class="page-actions"><p class="interaction-hint" id="love-hint" aria-live="polite">Appuie sur mon cœur. Il bat pour toi.</p><button class="replay-button" id="replay">↺ &nbsp; Revivre notre petite histoire</button><span class="action-note">Toi + moi, et tout ce qui nous attend.</span></div>
+      </section>
+
+      <nav class="chapter-nav" aria-label="Les cinq surprises">
+        <a href="#lettre" class="chapter-link active" aria-current="step"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span><span>La lettre</span><small>01</small></a><span class="step-line"></span>
+        <a href="#fleur" class="chapter-link"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 9C3 2 2 12 8 12 0 18 11 22 12 15 14 23 24 17 17 12 24 10 18 1 12 9Z"/><circle cx="12" cy="12" r="2"/></svg></span><span>La fleur</span><small>02</small></a><span class="step-line"></span>
+        <a href="#coeur" class="chapter-link"><span class="step-icon"><svg viewBox="0 0 64 60" fill="none" stroke="currentColor" stroke-width="4"><use href="#heart"/></svg></span><span>Mon cœur</span><small>03</small></a><span class="step-line"></span>
+        <a href="#mots" class="chapter-link"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M9 9h11M9 15h11M4 9h5M4 15h5"/></svg></span><span>Nos mots</span><small>04</small></a><span class="step-line"></span>
+        <a href="#amour" class="chapter-link"><span class="step-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><use href="#sparkle"/></svg></span><span>Nous deux</span><small>05</small></a>
+      </nav>
+    </main>
+    <footer><span>Fait avec amour, rien que pour toi.</span><svg viewBox="0 0 64 60" aria-hidden="true"><use href="#heart"/></svg><span>Le premier chapitre d’une jolie histoire</span></footer>
+    <div id="heart-rain" aria-hidden="true"></div>
+    <noscript><p class="noscript-note">Active JavaScript pour ouvrir le cadenas et découvrir les cinq surprises.</p></noscript>
+  </body>
+</html>
